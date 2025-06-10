@@ -1,5 +1,5 @@
 # Patient Feedback Collection System (PFCS)
-This repository contains a Patient Feedback Collection System (PFCS) built with Ruby on Rails, React, and Tailwind CSS. The system allows healthcare providers to collect feedback from patients through a web interface.
+This repository contains a Patient Feedback Collection System (PFCS) built with Ruby on Rails. The system allows healthcare providers to collect feedback from patients through a web interface.
 
 ## Versions
 - Ruby: 3.2.2
