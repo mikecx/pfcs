@@ -1,24 +1,46 @@
 # Patient Feedback Collection System (PFCS)
+This repository contains a Patient Feedback Collection System (PFCS) built with Ruby on Rails, React, and Tailwind CSS. The system allows healthcare providers to collect feedback from patients through a web interface.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Versions
+- Ruby: 3.2.2
+- Rails: 8.0.2
 
-Things you may want to cover:
+## Requirements
+- Ruby 3.2.2 or higher
+- Rails 8.0.2 or higher
+- Node.js and Yarn for managing JavaScript dependencies
+- SQLite3 for the database
 
-* Ruby version
+## Installation
+1. Clone the repository:
+   ```bash
+   git clone
+   bundle install
+   rake db:setup
+   yarn install
+   ```
 
-* System dependencies
+## Running the Application
+To start the Rails server, run the following command:
 
-* Configuration
+```bash
+bin/dev
+```
 
-* Database creation
+then open your web browser and navigate to `http://localhost:3000`.
 
-* Database initialization
+## Testing
+This project is set up to use RSpec for testing. To run the test suite, use the following command:
 
-* How to run the test suite
+```bash
+bundle exec rspec
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+## Linting
+This project uses RuboCop for linting. To check the code style, run:
 
-* Deployment instructions
+```bash
+bundle exec rubocop
+```
 
-* ...
+## Design decisions

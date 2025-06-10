@@ -1,0 +1,30 @@
+# frozen_string_literal: true
+
+class Appointment < ApplicationRecord
+  enum :status, { scheduled: 0, active: 1, finished: 2, cancelled: 3 }, prefix: true
+
+  validates :resource_id, presence: true, uniqueness: true
+  validates :period_start, presence: true
+  validates :period_end, presence: true
+  validate :end_time_after_start_time
+
+  def subject
+    return nil if subject_reference.blank?
+
+    Patient.find_by(resource_id: subject_reference)
+  end
+
+  def actor
+    return nil if actor_reference.blank?
+
+    ResourceLocater.call(id: actor_reference)
+  end
+
+  private
+
+  def end_time_after_start_time
+    return if period_start.blank? || period_end.blank?
+
+    errors.add(:period_end, "must be after start time") if period_end <= period_start
+  end
+end
