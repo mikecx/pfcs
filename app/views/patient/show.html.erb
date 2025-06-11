@@ -1,0 +1,39 @@
+<div class="p-2">
+  <h2 class="text-2xl font-bold py-2">
+    <%= @patient.name %>
+  </h2>
+  <div class="py-2">
+    <h3 class="text-xl font-semibold">Gender</h3>
+    <p>
+      <%= @patient.gender.humanize %>
+    </p>
+  </div>
+  <div class="py-2">
+    <h3 class="text-xl font-semibold">Birthdate</h3>
+    <p>
+      <%= @patient.birth_date.to_formatted_s(:long) %>
+    </p>
+  </div>
+  <div class="py-2">
+    <h3 class="text-xl font-semibold">Addresses</h3>
+    <% @patient.addresses.each do |address| %>
+      <p>
+        <%= "(#{address.use}) #{address.lines}" %>
+      </p>
+    <% end %>
+  </div>
+  <div class="py-2">
+    <h3 class="text-xl font-semibold">Contacts</h3>
+    <% @patient.contacts.each do |contact| %>
+      <p>
+        <%= "#{contact.system} (#{contact.use}): #{contact.value}" %>
+      </p>
+    <% end %>
+  </div>
+  <div class="py-2">
+    <h3 class="text-xl font-semibold">Appointments</h3>
+    <% @patient.appointments.order(period_end: :desc).each do |appointment| %>
+      <%= render "appointment/appointment", appointment: %>
+    <% end %>
+  </div>
+</div>

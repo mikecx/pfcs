@@ -5,7 +5,7 @@ module EntryParser
     method_object [ :resource! ]
 
     def call
-      id = resource.dig(:id)
+      id = "Diagnosis/#{resource.dig(:id)}"
       meta = resource.dig(:meta)
       status = resource.dig(:status)
       coding = resource.dig(:code, :coding)

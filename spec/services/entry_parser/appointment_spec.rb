@@ -10,7 +10,7 @@ describe EntryParser::Appointment do
 
   let(:resource) do
     {
-      id: 'Appointment/123',
+      id: '123',
       status: 'scheduled',
       type: [ { text: 'Consultation' } ],
       subject: { reference: 'Patient/456' },

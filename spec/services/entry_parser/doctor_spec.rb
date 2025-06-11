@@ -7,7 +7,7 @@ describe EntryParser::Doctor do
 
   let(:resource) do
     {
-      id: 'Doctor/123',
+      id: '123',
       name: [
         {
           family: 'Doe',

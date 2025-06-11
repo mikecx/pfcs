@@ -7,7 +7,7 @@ describe EntryParser::Patient do
 
   let(:resource) do
     {
-      id: 'Patient/123',
+      id: '123',
       active: true,
       name: [
         {

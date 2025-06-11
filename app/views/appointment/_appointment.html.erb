@@ -1,0 +1,17 @@
+<div class="pb-2">
+  <p>
+    Date: <%= appointment.period_start.in_time_zone.to_date.to_formatted_s(:long) %>
+  </p>
+  <p>
+    Time: <%= appointment.period_start.in_time_zone.strftime("%H:%M") %>-<%= appointment.period_end.in_time_zone.strftime("%H:%M") %>
+  </p>
+  <p>
+    Type: <%= appointment.appointment_type %>
+  </p>
+  <p>
+    Status: <%= appointment.status.humanize %>
+  </p>
+  <% if appointment.status_finished? %>
+  <a href="" class="text-blue-600 visited:text-purple-600">Provide feedback</a>
+  <% end %>
+</div>

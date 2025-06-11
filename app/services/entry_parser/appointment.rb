@@ -5,7 +5,7 @@ module EntryParser
     method_object [ :resource! ]
 
     def call
-      id = resource.dig(:id)
+      id = "Appointment/#{resource.dig(:id)}"
 
       status = resource.dig(:status)
       type = resource.dig(:type)

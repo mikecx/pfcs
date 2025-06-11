@@ -54,6 +54,9 @@ group :development, :test do
   # Set up factories for tests
   gem "factory_bot_rails"
 
+  # For testing controller assignments and rendering
+  gem "rails-controller-testing"
+
   # Use RSpec instead of Minitest
   gem "rspec-rails", "~> 8.0.0"
 

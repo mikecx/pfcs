@@ -7,7 +7,7 @@ describe EntryParser::Diagnosis do
 
   let(:resource) do
     {
-      id: 'Diagnosis/123',
+      id: '123',
       meta: { lastUpdated: '2023-10-01T12:00:00Z' },
       status: 'final',
       code: {
