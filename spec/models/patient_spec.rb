@@ -23,6 +23,7 @@ describe Patient, type: :model do
     specify(:aggregate_failures) do
       expect(patient).to have_many(:contacts).dependent(:destroy)
       expect(patient).to have_many(:addresses).dependent(:destroy)
+      expect(patient).to have_many(:appointments).with_foreign_key(:subject_reference).dependent(:destroy)
     end
   end
 

@@ -29,6 +29,14 @@ describe Appointment, type: :model do
     end
   end
 
+  describe 'Associations' do
+    specify(:aggregate_failures) do
+      expect(appointment).to belong_to(:doctor).with_foreign_key(:actor_reference).class_name('Doctor').optional
+      expect(appointment).to belong_to(:patient).with_foreign_key(:subject_reference).class_name('Patient').optional
+      expect(appointment).to have_one(:diagnosis).with_foreign_key(:appointment_reference).class_name('Diagnosis').dependent(:destroy)
+    end
+  end
+
   describe 'Methods' do
     describe '#subject' do
       context 'when the subject reference is not set' do

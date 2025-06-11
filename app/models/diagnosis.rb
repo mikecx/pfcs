@@ -5,9 +5,5 @@ class Diagnosis < ApplicationRecord
 
   validates :resource_id, presence: true, uniqueness: true
 
-  def appointment
-    return nil unless appointment_reference.present?
-
-    ResourceLocater.call(id: appointment_reference)
-  end
+  belongs_to :appointment, foreign_key: :appointment_reference, primary_key: :resource_id, class_name: "Appointment", optional: true
 end

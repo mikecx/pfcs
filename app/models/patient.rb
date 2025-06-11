@@ -6,8 +6,5 @@ class Patient < ApplicationRecord
 
   has_many :contacts, as: :resource, dependent: :destroy
   has_many :addresses, as: :resource, dependent: :destroy
-
-  def appointments
-    Appointment.where(subject_reference: resource_id)
-  end
+  has_many :appointments, foreign_key: :subject_reference, primary_key: :resource_id, dependent: :destroy
 end

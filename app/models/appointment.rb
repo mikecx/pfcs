@@ -8,6 +8,11 @@ class Appointment < ApplicationRecord
   validates :period_end, presence: true
   validate :end_time_after_start_time
 
+  belongs_to :doctor, foreign_key: :actor_reference, primary_key: :resource_id, class_name: "Doctor", optional: true
+  belongs_to :patient, foreign_key: :subject_reference, primary_key: :resource_id, class_name: "Patient", optional: true
+
+  has_one :diagnosis, foreign_key: :appointment_reference, primary_key: :resource_id, class_name: "Diagnosis", dependent: :destroy
+
   def subject
     return nil if subject_reference.blank?
 
