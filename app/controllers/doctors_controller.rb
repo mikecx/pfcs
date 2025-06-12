@@ -6,6 +6,8 @@ class DoctorsController < ApplicationController
   end
 
   def show
-    @doctor = Doctor.find(params[:id])
+    @doctor = Doctor.includes(:feedback_responses).find(params[:id])
+    scores = @doctor.feedback_responses.pluck(:nps_score).compact
+    @mean_nps = scores.any? ? scores.sum.to_f / scores.size : 0
   end
 end
