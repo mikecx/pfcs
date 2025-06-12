@@ -10,6 +10,7 @@ This repository contains a Patient Feedback Collection System (PFCS) built with 
 - Rails 8.0.2 or higher
 - Node.js and Yarn for managing JavaScript dependencies
 - SQLite3 for the database
+- OpenAI API key for AI integration
 
 ## Installation
 1. Clone the repository:
@@ -19,6 +20,12 @@ This repository contains a Patient Feedback Collection System (PFCS) built with 
    rake db:setup
    yarn install
    ```
+   
+### Setting up the OpenAI API key
+Normally, I would use either a secure key/value store or environment variables to store the OpenAI API key.
+In this case, for ease of setup, I have added the OpenAI API key directly in the caller of the AI service.
+
+To use the AI features, add your OpenAI API key to the `Ai::OpenAi::Responses` service object in `app/services/ai/open_ai/responses.rb`:
 
 ## Running the Application
 To start the Rails server, run the following command:
