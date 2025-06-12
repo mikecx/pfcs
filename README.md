@@ -84,13 +84,19 @@ interact with. The backend handles data storage, retrieval, and processing of pa
 down into partials to make building new UI components easier.
 
 #### API Endpoints
-GET  /doctors
-GET  /doctors/:id
-GET  /patients
-GET  /patients/:id
+GET /doctors
+
+GET /doctors/:id
+
+GET /patients
+
+GET /patients/:id
+
 POST /appointments/:appointment_id/feedback_responses
-GET  /appointments/:appointment_id/feedback_responses/new
-GET  /appointments/:appointment_id/feedback_responses/:id
+
+GET /appointments/:appointment_id/feedback_responses/new
+
+GET /appointments/:appointment_id/feedback_responses/:id
 
 ### The frontend
 The frontend is built with Rails views for simplicity and speed. It uses Tailwind CSS for simplistic styling. I decided
