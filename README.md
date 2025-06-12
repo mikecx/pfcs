@@ -60,11 +60,11 @@ This is designed to run in a background job after the feedback is submitted and 
 
 While building the app, I used multiple different AI tools to help speed up the development process. I used GitHub Copilot
 to help write code and generate outlines in tests. I used Anthropic's Claude to help figure get the class names for the
-basic UI design. Finally, I used OpenAI's GPT-4 for the AI work described above as well as quick "Fix it" calls inside the
+basic UI design. Finally, I used OpenAI's GPT-4 for the AI work described above as well as quick "Fix it" calls inside 
 my editor.
 
 ## Parts
-### DataProvider::Load and EntryParsers
+### DataProvider::Load, ParseRecordsJob, and EntryParsers
 These classes are responsible for loading data from external sources and parsing it into the application's format. They
 handle the import of patient feedback and other related data and are broken down into smaller, manageable service objects
 to keep the code clean and maintainable. To add a new resource type, add the database modeling, create a new entry
@@ -73,7 +73,7 @@ parser, and add it to the ParseRecords job.
 ### Ai::OpenAi::Responses
 I created a service object to handle the AI responses from OpenAI. This class is responsible for making requests to the
 OpenAI API and processing the responses. It abstracts the complexity of interacting with the AI API and provides a simple
-interface for the rest of the application to use. It's structure as Ai/OpenAi/Responses is designed to allow expansion
+interface for the rest of the application to use. It's structured as Ai/OpenAi/Responses is designed to allow expansion
 for other AI providers and other endpoints from OpenAI in the future.
 
 ### The backend
