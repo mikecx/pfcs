@@ -55,10 +55,8 @@ the developer. If there was more data, I would add pagination to the Doctor and 
 
 ### AI Integration
 For the AI integration, I used the OpenAI API to analyze patient feedback. The AI model is set up to process feedback and
-provide insights into patient sentiment, find additional resources, and suggest organizations and groups that can help.
-
-This is designed to run in a background job after the feedback is submitted and then "emails" the results to the user.
-If the sentiment is negative, the feedback will be sent to the healthcare provider for further action.
+provide insights into patient sentiment, find additional resources, and suggest organizations and groups that can help. 
+This is designed to run in a background job after the feedback is submitted and then emails a response to the patient.
 
 While building the app, I used multiple different AI tools to help speed up the development process. I used GitHub Copilot
 to help write code and generate outlines in tests. I used Anthropic's Claude to help figure get the class names for the
