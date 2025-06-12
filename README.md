@@ -66,7 +66,7 @@ provide insights into patient sentiment, find additional resources, and suggest 
 This is designed to run in a background job after the feedback is submitted and then emails a response to the patient.
 
 While building the app, I used multiple different AI tools to help speed up the development process. I used GitHub Copilot
-to help write code and generate outlines in tests. I used Anthropic's Claude to help figure get the class names for the
+to help write code and generate outlines in tests. I used Anthropic's Claude to help get the class names for the
 basic UI design. Finally, I used OpenAI's GPT-4 for the AI work described above as well as quick "Fix it" calls inside 
 my editor.
 
