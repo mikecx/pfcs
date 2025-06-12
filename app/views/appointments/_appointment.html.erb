@@ -13,5 +13,7 @@
   </p>
   <% if appointment.status_finished? && appointment.feedback_response.nil? %>
     <%= link_to 'Provide feedback', new_appointment_feedback_response_path(appointment_id: appointment.id), class: "text-blue-600 visited:text-purple-600" %>
+  <% elsif appointment.feedback_response.present? %>
+    <%= link_to 'See feedback', appointment_feedback_response_path(appointment_id: appointment.id, id: appointment.feedback_response.id), class: "text-blue-600 visited:text-purple-600" %>
   <% end %>
 </div>

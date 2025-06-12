@@ -17,8 +17,9 @@
     <strong>Is there anything Dr. <%= @feedback_response.doctor.name %> could have explained better?</strong>
     <p class="text-lg"><%= @feedback_response.management_feedback %></p>
   </div>
-  <div>
+  <div class="py-2">
     <strong>How do you feel about being diagnosed with <%= @feedback_response.diagnosis.human_readable %>?</strong>
     <p class="text-lg"><%= @feedback_response.diagnosis_feedback %></p>
   </div>
+  <%= link_to "My appointments", patient_path(id: @feedback_response.patient.id), class: "text-blue-600 visited:text-purple-600" %>
 </div>
