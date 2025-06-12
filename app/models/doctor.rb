@@ -5,4 +5,5 @@ class Doctor < ApplicationRecord
   validates :name, presence: true
 
   has_many :appointments, foreign_key: :actor_reference, primary_key: :resource_id
+  has_many :feedback_responses, through: :appointments
 end

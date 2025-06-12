@@ -1,0 +1,24 @@
+<div class="p-2">
+  <h2 class="text-2xl font-bold py-2">
+    Feedback received
+  </h2>
+  <div class="py-2">
+    Thanks again, look for additional resources soon! Here's what you provided:
+  </div>
+  <div class="py-2">
+    <strong>On a scale of 1-10, would you recommend Dr. <%= @feedback_response.doctor.name %> to a friend or family member?</strong>
+    <p class="text-lg"><%= @feedback_response.nps_score %></p>
+  </div>
+  <div class="py-2">
+    <strong>You were diagnosed with "<%= @feedback_response.diagnosis.human_readable %>". Did Dr. <%= @feedback_response.doctor.name %> explain how to manage this diagnosis in a way you could understand?</strong>
+    <p class="text-lg"><%= @feedback_response.management_understood ? 'Yes' : 'No' %></p>
+  </div>
+  <div class="py-2">
+    <strong>Is there anything Dr. <%= @feedback_response.doctor.name %> could have explained better?</strong>
+    <p class="text-lg"><%= @feedback_response.management_feedback %></p>
+  </div>
+  <div>
+    <strong>How do you feel about being diagnosed with <%= @feedback_response.diagnosis.human_readable %>?</strong>
+    <p class="text-lg"><%= @feedback_response.diagnosis_feedback %></p>
+  </div>
+</div>

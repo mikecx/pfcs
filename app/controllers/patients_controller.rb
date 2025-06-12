@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class PatientController < ApplicationController
+class PatientsController < ApplicationController
   def index
     @patients = Patient.all.order(name: :asc)
   end

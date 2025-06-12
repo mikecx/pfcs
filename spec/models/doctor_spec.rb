@@ -21,6 +21,7 @@ describe Doctor, type: :model do
   describe 'Associations' do
     specify(:aggregate_failures) do
       expect(doctor).to have_many(:appointments).with_foreign_key(:actor_reference).class_name('Appointment')
+      expect(doctor).to have_many(:feedback_responses).through(:appointments)
     end
   end
 

@@ -6,4 +6,12 @@ class Diagnosis < ApplicationRecord
   validates :resource_id, presence: true, uniqueness: true
 
   belongs_to :appointment, foreign_key: :appointment_reference, primary_key: :resource_id, class_name: "Appointment", optional: true
+
+  def human_readable
+    return "" if coding.blank?
+
+    coding&.map do |code|
+      code["name"] || ""
+    end.join(", ")
+  end
 end

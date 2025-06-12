@@ -44,6 +44,9 @@ gem "attr_extras"
 # Create realistic looking fake data
 gem "faker"
 
+# Better interface for making HTTP requests
+gem "httparty"
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"

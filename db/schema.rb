@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_06_10_190849) do
+ActiveRecord::Schema[8.0].define(version: 2025_06_11_151008) do
   create_table "addresses", force: :cascade do |t|
     t.integer "use", default: 0
     t.text "lines", null: false
@@ -64,6 +64,17 @@ ActiveRecord::Schema[8.0].define(version: 2025_06_10_190849) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["resource_id"], name: "index_doctors_on_resource_id", unique: true
+  end
+
+  create_table "feedback_responses", force: :cascade do |t|
+    t.integer "appointment_id", null: false
+    t.integer "nps_score", default: 1
+    t.boolean "management_understood", default: false
+    t.text "management_feedback"
+    t.text "diagnosis_feedback"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["appointment_id"], name: "index_feedback_responses_on_appointment_id"
   end
 
   create_table "patients", force: :cascade do |t|

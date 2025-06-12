@@ -11,7 +11,7 @@
   <p>
     Status: <%= appointment.status.humanize %>
   </p>
-  <% if appointment.status_finished? %>
-  <a href="" class="text-blue-600 visited:text-purple-600">Provide feedback</a>
+  <% if appointment.status_finished? && appointment.feedback_response.nil? %>
+    <%= link_to 'Provide feedback', new_appointment_feedback_response_path(appointment_id: appointment.id), class: "text-blue-600 visited:text-purple-600" %>
   <% end %>
 </div>

@@ -7,4 +7,6 @@ class Patient < ApplicationRecord
   has_many :contacts, as: :resource, dependent: :destroy
   has_many :addresses, as: :resource, dependent: :destroy
   has_many :appointments, foreign_key: :subject_reference, primary_key: :resource_id, dependent: :destroy
+
+  has_many :feedback_responses, through: :appointments
 end

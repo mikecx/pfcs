@@ -12,6 +12,7 @@ class Appointment < ApplicationRecord
   belongs_to :patient, foreign_key: :subject_reference, primary_key: :resource_id, class_name: "Patient", optional: true
 
   has_one :diagnosis, foreign_key: :appointment_reference, primary_key: :resource_id, class_name: "Diagnosis", dependent: :destroy
+  has_one :feedback_response, dependent: :destroy
 
   def subject
     return nil if subject_reference.blank?

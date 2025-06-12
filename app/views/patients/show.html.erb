@@ -33,7 +33,7 @@
   <div class="py-2">
     <h3 class="text-xl font-semibold">Appointments</h3>
     <% @patient.appointments.order(period_end: :desc).each do |appointment| %>
-      <%= render "appointment/appointment", appointment: %>
+      <%= render "appointments/appointment", appointment: %>
     <% end %>
   </div>
 </div>

@@ -8,19 +8,19 @@ describe "Patients", type: :request do
     let!(:shawn) { create(:patient, name: "Shawn") }
 
     it "returns http success" do
-      get patient_index_path
+      get patients_path
 
       expect(response).to have_http_status(:success)
     end
 
     it "renders the index template" do
-      get patient_index_path
+      get patients_path
 
       expect(response).to render_template(:index)
     end
 
     it 'assigns @patients' do
-      get patient_index_path
+      get patients_path
 
       expect(assigns(:patients)).to include(bob, shawn)
     end

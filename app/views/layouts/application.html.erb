@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html style="height: 100%;">
+<html>
   <head>
     <title><%= content_for(:title) || "Pfcs" %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -22,8 +22,9 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body style="height: 100%;">
-    <main style="height: 100%;">
+  <body class="h-screen flex flex-col">
+    <%= render "layouts/header" %>
+    <main class="flex-1 bg-gray-50 overflow-auto">
       <%= yield %>
     </main>
   </body>

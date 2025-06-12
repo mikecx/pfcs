@@ -14,6 +14,10 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root "pages#index"
 
-  resources :doctor, only: [ :index, :show ]
-  resources :patient, only: [ :index, :show ]
+  resources :doctors, only: [ :index, :show ]
+  resources :patients, only: [ :index, :show ]
+
+  resources :appointments, only: [] do
+    resources :feedback_responses, only: [ :new, :create, :show ],  controller: "appointments/feedback_responses"
+  end
 end

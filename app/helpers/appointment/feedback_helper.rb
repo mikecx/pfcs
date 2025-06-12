@@ -1,0 +1,2 @@
+module Appointment::FeedbackHelper
+end

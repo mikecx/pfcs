@@ -1,0 +1,23 @@
+<h1>Feedback followup</h1>
+
+<p>We've received your feedback for your appointment on <%= @appointment.period_start.in_time_zone.to_date.to_formatted_s(:long) %>.</p>
+
+<p>
+  <%= @sentiment %>
+</p>
+
+<p>
+  <%= @more_information %>
+</p>
+
+<p>
+  <%= @organizations_and_groups %>
+</p>
+
+<p>
+  Please let us know if you have any further questions or concerns. You can reply to this email or contact us through our website.
+</p>
+
+<p>Thanks,</p>
+<br />
+<p>Your care team</p>
