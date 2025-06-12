@@ -67,8 +67,8 @@ my editor.
 ### DataProvider::Load and EntryParsers
 These classes are responsible for loading data from external sources and parsing it into the application's format. They
 handle the import of patient feedback and other related data and are broken down into smaller, manageable service objects
-to keep the code clean and maintainable. To add a new resource type, just add the database modeling, create a new entry
-parser, and add it to the DataProvider::Load class.
+to keep the code clean and maintainable. To add a new resource type, add the database modeling, create a new entry
+parser, and add it to the ParseRecords job.
 
 ### Ai::OpenAi::Responses
 I created a service object to handle the AI responses from OpenAI. This class is responsible for making requests to the
