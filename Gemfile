@@ -61,7 +61,7 @@ group :development, :test do
   gem "rails-controller-testing"
 
   # Use RSpec instead of Minitest
-  gem "rspec-rails", "~> 8.0.0"
+  gem "rspec-rails", "~> 8.0.1"
 
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem "rubocop-rails-omakase", require: false
